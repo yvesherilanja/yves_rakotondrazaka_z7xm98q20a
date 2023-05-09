@@ -2,9 +2,6 @@ package anywr.test_spring.service;
 
 import java.util.HashSet;
 import java.util.Set;
-
-import javax.transaction.Transactional;
-
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -12,11 +9,11 @@ import org.springframework.stereotype.Service;
 import anywr.test_spring.model.ERole;
 import anywr.test_spring.model.Role;
 import anywr.test_spring.model.User;
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{
 
 	@Override
-	@Transactional
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = new User();
 		user.setUsername("anywr");
